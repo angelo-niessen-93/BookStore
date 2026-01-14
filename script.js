@@ -107,7 +107,8 @@ let books = [
     },
     {
       "name": "Im Schatten des Mondes",
-      "author": "Philipp Silber",
+      "author": "Corinna Antelmann",
+      "image": "img/im-schatten-des-mondes.jpg",
       "likes": 890,
       "liked": false,
       "price": 12.35,
@@ -126,7 +127,8 @@ let books = [
     },
     {
       "name": "Jenseits der Sterne",
-      "author": "Oliver Schwarz",
+      "author": "Brandon Sanderson",
+      "image": "img/dersterne.jpg",
       "likes": 1450,
       "liked": true,
       "price": 21.00,
@@ -141,7 +143,8 @@ let books = [
     },
     {
       "name": "Das verborgene Königreich",
-      "author": "Elena Gold",
+      "author": "Jane Johnson ",
+      "image": "img/königreich.jpg",
       "likes": 920,
       "liked": false,
       "price": 17.00,
@@ -157,6 +160,7 @@ let books = [
     {
       "name": "Liebe in Zeiten des Krieges",
       "author": "Emilia Rot",
+      "image": "img/liebe.webp",
       "likes": 1800,
       "liked": true,
       "price": 19.99,
