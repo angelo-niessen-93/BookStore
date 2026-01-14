@@ -173,3 +173,25 @@ let books = [
       ]
     }
   ]
+
+  function renderBooks(){
+    const bookList = document.getElementById("bookList");
+
+    for(let i = 0; i < books.length; i++) {
+        const book = books[i];
+
+        bookList.innerHTML +=
+        `<p>Name: ${book.name}</p>
+         <p>Author: ${book.author}</p>
+         <p>Likes: ${book.likes}</p>
+         <p>Price: ${book.price}€</p>
+         <p>PublishedYear: ${book.publishedYear}</p>
+         <p>Genre: ${book.genre}</p>
+         
+          `;
+    
+    }
+
+}
+
+renderBooks();
