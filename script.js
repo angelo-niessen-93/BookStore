@@ -1,11 +1,12 @@
 let books = [
     {
-      "name": "Die Geheimnisse des Ozeans",
-      "author": "Clara Meer",
+      "name": "Die unendliche Geschichte",
+      "author": "Michael Ende",
+      "image": "img/die-unendliche-geschichte.jpeg",
       "likes": 1250,
       "liked": true,
-      "price": 19.99,
-      "publishedYear": 2018,
+      "price": 14.99,
+      "publishedYear": 2017,
       "genre": "Fantasy",
       "comments": [
         {
@@ -31,22 +32,24 @@ let books = [
       ]
     },
     {
-      "name": "Der vergessene Pfad",
-      "author": "Maximilian Schwarz",
+      "name": "A Match Made In Space",
+      "author": "George McFly",
+      "image": "img/back-to-the-future.jpg",
       "likes": 980,
       "liked": false,
-      "price": 14.50,
-      "publishedYear": 2021,
+      "price": 14.99,
+      "publishedYear": 2020,
       "genre": "Fantasy",
       "comments": []
     },
     {
-      "name": "Die Farben des Himmels",
-      "author": "Laura Blau",
+      "name": "Harry Potter 1 und der Stein der Weisen",
+      "author": "Joanne K. Rowling, J.K. Rowling",
+      "image": "img/Harry-Potter.jpg",
       "likes": 1520,
       "liked": true,
       "price": 22.95,
-      "publishedYear": 2019,
+      "publishedYear": 2005,
       "genre": "Romantik",
       "comments": [
         {
@@ -55,7 +58,7 @@ let books = [
         },
         {
           "name": "BookLover21",
-          "comment": "Ein romantisches Meisterwerk, das mich tief berührt und bewegt hat."
+          "comment": "Ein Meisterwerk, das mich tief berührt und bewegt hat."
         },
         {
           "name": "FantasyNerd",
@@ -63,7 +66,7 @@ let books = [
         },
         {
           "name": "SciFiEnthusiast",
-          "comment": "Die Zeitreise-Elemente waren genial und haben die Story spannend gemacht."
+          "comment": "Die Reise-Elemente waren genial und haben die Story spannend gemacht."
         },
         {
           "name": "ReadingAddict",
@@ -72,13 +75,14 @@ let books = [
       ]
     },
     {
-      "name": "Das Rätsel der Zeit",
-      "author": "Alexander Weiss",
+      "name": "Grey - Fifty Shades of Grey",
+      "author": "E L James",
+      "image": "img/grey.webp",
       "likes": 750,
       "liked": false,
       "price": 18.00,
       "publishedYear": 2020,
-      "genre": "Science-Fiction",
+      "genre": "Roman",
       "comments": [
         {
           "name": "BuchKenner",
@@ -91,8 +95,9 @@ let books = [
       ]
     },
     {
-      "name": "Der letzte Wächter",
-      "author": "Sabine Grün",
+      "name": "Kein Zurück",
+      "author": "Stephen King",
+      "image": "img/kein-zurueck.jpeg",
       "likes": 1300,
       "liked": true,
       "price": 16.75,
@@ -105,7 +110,7 @@ let books = [
       "author": "Philipp Silber",
       "likes": 890,
       "liked": false,
-      "price": 12.30,
+      "price": 12.35,
       "publishedYear": 2022,
       "genre": "Science-Fiction",
       "comments": [
@@ -139,7 +144,7 @@ let books = [
       "author": "Elena Gold",
       "likes": 920,
       "liked": false,
-      "price": 17.50,
+      "price": 17.00,
       "publishedYear": 2020,
       "genre": "Fantasy",
       "comments": [
@@ -181,14 +186,16 @@ let books = [
         const book = books[i];
 
         bookList.innerHTML +=
-        `<p>Name: ${book.name}</p>
+    `<div class="book">
+         <img src="${book.image}" alt="${book.name}">
+         <p>Name: ${book.name}</p>
          <p>Author: ${book.author}</p>
          <p>Likes: ${book.likes}</p>
          <p>Price: ${book.price}€</p>
          <p>PublishedYear: ${book.publishedYear}</p>
          <p>Genre: ${book.genre}</p>
-         
-          `;
+     </div>
+      `;
     
     }
 
