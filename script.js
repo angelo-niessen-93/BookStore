@@ -181,7 +181,7 @@ let books = [
 
   function renderBooks(){
     const bookList = document.getElementById("bookList");
-
+    bookList.innerHTML = "";
     for(let i = 0; i < books.length; i++) {
         const book = books[i];
 
@@ -194,11 +194,30 @@ let books = [
          <p>Price: ${book.price}€</p>
          <p>PublishedYear: ${book.publishedYear}</p>
          <p>Genre: ${book.genre}</p>
-     </div>
-      `;
+     
+          <p class="likes">
+          <span class="like-btn" onclick="toggleLike(${i})">
+          ${book.liked ? "❤️" : "🤍"}
+          </span>
+          ${book.likes}
+          </p>
+    </div>`;
     
     }
 
+}
+
+function toggleLike(index) {
+  const book = books[index];
+
+  if (book.liked) {
+    book.likes--;
+  } else {
+    book.likes++;
+  }
+
+  book.liked = !book.liked;
+  renderBooks();
 }
 
 renderBooks();
