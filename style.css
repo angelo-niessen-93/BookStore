@@ -1,15 +1,36 @@
 body {
     margin: 0;
+    background-color: rgba(95, 158, 160, 0.622);
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cadetblue;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+a:hover {
+    color: red;
 }
 
 .bookList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
     gap: 20px;
+    padding: 10px;
 }
 
 .book {
-    background: rgb(240, 240, 240);
+    background: cadetblue;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
