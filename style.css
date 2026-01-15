@@ -134,18 +134,19 @@ footer {
     align-items: center;
     flex-direction: column;
     max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 50px;
+    margin-right: 50px;
     box-sizing: border-box;
 }
 
 .myprofile {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-around;
     background-color: cadetblue;
     border-radius: 8px;
     flex-direction: column;
+    padding: 10px;
 }
 
 .profil-img {
