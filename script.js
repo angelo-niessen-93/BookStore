@@ -252,12 +252,7 @@ function renderComments(comments) {
   let html = "";
 
   for (let i = 0; i < comments.length; i++) {
-    html += `
-      <li>
-        <strong>${comments[i].name}:</strong>
-        ${comments[i].comment}
-      </li>
-    `;
+    html += `<li><strong>${comments[i].name}:</strong>${comments[i].comment}</li>`;
   }
 
   return html;
