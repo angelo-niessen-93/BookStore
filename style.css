@@ -21,6 +21,14 @@ a:hover {
     color: red;
 }
 
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cadetblue;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .bookList {
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
@@ -86,10 +94,12 @@ a:hover {
   margin-right: 5px;
   margin-bottom: 5px;
   background: #9bc3c4;
+  border-radius: 4px;
 }
 
 .comment-form button {
   padding: 6px 10px;
   cursor: pointer;
   background: #9bc3c4;
+  border-radius: 8px;
 }

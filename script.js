@@ -1,3 +1,4 @@
+
 let books = [
     {
       "name": "Die unendliche Geschichte",
@@ -201,7 +202,8 @@ let books = [
           <p class="likes"><span class="like-btn" onclick="toggleLike(${i})">${book.liked ? "❤️" : "🤍"}</span>${book.likes}</p>
           <h3>Kommentare</h3>
           <ul class="comment-list">${renderComments(book.comments)}</ul>
-          <div class="comment-form">
+
+        <div class="comment-form">
           <input id="name-${i}" type="text" placeholder="Dein Name">
           <input id="comment-${i}" type="text" placeholder="Dein Kommentar">
           <button onclick="addComment(${i})">Absenden</button>
@@ -220,7 +222,7 @@ function addComment(bookIndex) {
   const name = nameInput.value.trim();
   const comment = commentInput.value.trim();
 
-  if (name === "" || comment === "") {
+  if (name === "" ?? comment === "") {
     alert("Bitte Name und Kommentar ausfüllen");
     return;
   }
