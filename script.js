@@ -1,4 +1,5 @@
 
+
 let books = [
     {
       "name": "Die unendliche Geschichte",
@@ -184,6 +185,11 @@ let books = [
     }
   ]
 
+  const storedBooks = localStorage.getItem("books");
+    if (storedBooks) {
+    books = JSON.parse(storedBooks);
+}
+
   function renderBooks(){
     const bookList = document.getElementById("bookList");
     bookList.innerHTML = "";
@@ -222,18 +228,15 @@ function addComment(bookIndex) {
   const name = nameInput.value.trim();
   const comment = commentInput.value.trim();
 
-  if (name === "" ?? comment === "") {
+  if (name === "" || comment === "") {
     alert("Bitte Name und Kommentar ausfüllen");
     return;
   }
 
-  books[bookIndex].comments.push({
-    name: name,
-    comment: comment
-  });
+  books[bookIndex].comments.push({ name, comment });
 
-  
-
+ 
+  localStorage.setItem("books", JSON.stringify(books));
 
   nameInput.value = "";
   commentInput.value = "";
@@ -264,14 +267,14 @@ function renderComments(comments) {
 function toggleLike(index) {
   const book = books[index];
 
-  if (book.liked) {
-    book.likes--;
-  } else {
-    book.likes++;
-  }
-
+  book.likes += book.liked ? -1 : 1;
   book.liked = !book.liked;
+
+  
+  localStorage.setItem("books", JSON.stringify(books));
+
   renderBooks();
 }
+localStorage.setItem("books", JSON.stringify(books));
 
 renderBooks();
