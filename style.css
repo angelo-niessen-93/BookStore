@@ -148,6 +148,11 @@ footer {
     border-radius: 8px;
 }
 
+.mainimpressum {
+    display: flex;
+    justify-content: center;
+}
+
 .impressum {
     display: flex;
     justify-content: center;
@@ -161,7 +166,7 @@ footer {
 
 .myprofile {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-around;
     background-color: cadetblue;
     border-radius: 8px;
@@ -181,6 +186,8 @@ footer {
     height: inherit;
     padding: 13px;
 }
+
+
 
 .comment-list {
     max-height: 160px;
