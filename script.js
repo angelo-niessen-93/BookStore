@@ -190,36 +190,16 @@ let books = [
     books = JSON.parse(storedBooks);
 }
 
-  function renderBooks(){
+
+function renderBooks() {
     const bookList = document.getElementById("bookList");
     bookList.innerHTML = "";
-    for(let i = 0; i < books.length; i++) {
-        const book = books[i];
 
-        bookList.innerHTML +=
-    `<div class="book">
-          <img src="${book.image}" alt="${book.name}">
-          <p>Name: ${book.name}</p>
-          <p>Author: ${book.author}</p>
-          <p>Likes: ${book.likes}</p>
-          <p>Price: ${book.price}€</p>
-          <p>PublishedYear: ${book.publishedYear}</p>
-          <p>Genre: ${book.genre}</p>
-          <p class="likes"><span class="like-btn" onclick="toggleLike(${i})">${book.liked ? "❤️" : "🤍"}</span>${book.likes}</p>
-          <h3>Kommentare</h3>
-          <ul class="comment-list">${renderComments(book.comments)}</ul>
-
-        <div class="comment-form">
-          <input id="name-${i}" type="text" placeholder="Dein Name">
-          <input id="comment-${i}" type="text" placeholder="Dein Kommentar">
-          <button onclick="addComment(${i})">Absenden</button>
-        </div>
-      
-    </div>`;
-    
+    for (let i = 0; i < books.length; i++) {
+        bookList.innerHTML += renderBookHTML(books[i], i);
     }
-    
 }
+
 
 function addComment(bookIndex) {
   const nameInput = document.getElementById(`name-${bookIndex}`);
@@ -229,7 +209,6 @@ function addComment(bookIndex) {
   const comment = commentInput.value.trim();
 
   if (name === "" || comment === "") {
-    alert("Bitte Name und Kommentar ausfüllen");
     return;
   }
 
@@ -252,10 +231,11 @@ function renderComments(comments) {
   let html = "";
 
   for (let i = 0; i < comments.length; i++) {
-    html += `<li><strong>${comments[i].name}:</strong>${comments[i].comment}</li>`;
+    html += `<li><strong>${comments[i].name}: </strong>${comments[i].comment}</li>`;
   }
 
   return html;
+  ;
 }
 
 
@@ -267,9 +247,5 @@ function toggleLike(index) {
 
   
   localStorage.setItem("books", JSON.stringify(books));
-
   renderBooks();
 }
-localStorage.setItem("books", JSON.stringify(books));
-
-renderBooks();
