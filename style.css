@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    
+}
+
+
 body {
     
     font-family: "Open Sans", sans-serif;
@@ -11,6 +17,13 @@ header {
     align-items: center;
     background-color: cadetblue;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-nav {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -36,12 +49,16 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.bookList {
+.bookList { 
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
     justify-content: center;
     gap: 20px;
     padding: 10px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 .book {
@@ -131,4 +148,11 @@ footer {
     width: 100px;
     border-radius: 30px;
     padding: 10px;
+}
+
+.my-profile {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    padding: 13px;
 }
