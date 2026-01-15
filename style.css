@@ -36,6 +36,11 @@ h2 {
     justify-content: center;
 }
 
+h3 {
+    display: flex;
+    justify-content: center;
+}
+
 a {
     text-decoration: none;
     padding: 10px;
@@ -44,6 +49,15 @@ a {
 
 a:hover {
     color: red;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 footer {
@@ -179,3 +193,20 @@ footer {
   margin-bottom: 6px;
   word-break: break-word;
 } 
+
+.fav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: inherit;
+}
+
+#favoriteList {
+    list-style: none; 
+    display: contents; 
+}
+
+#favoritHomepage {
+    overflow-y: auto;
+}

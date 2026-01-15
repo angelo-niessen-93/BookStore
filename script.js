@@ -185,11 +185,10 @@ let books = [
     }
   ]
 
-  const storedBooks = localStorage.getItem("books");
+const storedBooks = localStorage.getItem("books");
     if (storedBooks) {
     books = JSON.parse(storedBooks);
 }
-
 
 function renderBooks() {
     const bookList = document.getElementById("bookList");
@@ -199,7 +198,6 @@ function renderBooks() {
         bookList.innerHTML += renderBookHTML(books[i], i);
     }
 }
-
 
 function addComment(bookIndex) {
   const nameInput = document.getElementById(`name-${bookIndex}`);
@@ -238,13 +236,58 @@ function renderComments(comments) {
 }
 
 
+function renderFavorites() {
+    const favoritHomepage = document.getElementById("favoritHomepage");
+    if (!favoritHomepage) return; 
+
+    favoritHomepage.innerHTML = "";
+
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.length === 0) {
+        favoritHomepage.innerHTML = "<li>Du hast noch keine Favoriten.</li>";
+        return;
+    }
+
+    for (let i = 0; i < favorites.length; i++) {
+        const book = favorites[i];
+        favoritHomepage.innerHTML += `
+            <li>
+                <img src="${book.image}" alt="${book.name}" width="100">
+                <p>${book.name} von ${book.author}</p>
+                <p>Preis: ${book.price}€</p>
+            </li>
+        `;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", renderFavorites);
+
+renderFavorites();
+
+
+
 function toggleLike(index) {
-  const book = books[index];
+    const book = books[index];
 
-  book.likes += book.liked ? -1 : 1;
-  book.liked = !book.liked;
+    book.liked = !book.liked;
+    book.likes += book.liked ? 1 : -1;
 
-  
-  localStorage.setItem("books", JSON.stringify(books));
-  renderBooks();
+    
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (book.liked) {
+        
+        if (!favorites.some(fav => fav.name === book.name)) {
+            favorites.push(book);
+        }
+    } else {
+       
+        favorites = favorites.filter(fav => fav.name !== book.name);
+    }
+
+    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    renderBooks();
 }
