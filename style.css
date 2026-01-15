@@ -1,4 +1,6 @@
 body {
+    
+    font-family: "Open Sans", sans-serif;
     margin: 0;
     background-color: rgba(95, 158, 160, 0.622);
 }
@@ -9,6 +11,11 @@ header {
     align-items: center;
     background-color: cadetblue;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
 }
 
 a {
@@ -102,4 +109,27 @@ footer {
   cursor: pointer;
   background: #9bc3c4;
   border-radius: 8px;
+}
+
+.impressum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myprofile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: cadetblue;
+    border-radius: 8px;
+    height: 100%;
+    flex-direction: column;
+}
+
+.profil-img {
+    width: 100px;
+    border-radius: 30px;
+    padding: 10px;
 }
