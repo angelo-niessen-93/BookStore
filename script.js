@@ -214,7 +214,6 @@ function addComment(bookIndex) {
 
   books[bookIndex].comments.push({ name, comment });
 
- 
   localStorage.setItem("books", JSON.stringify(books));
 
   nameInput.value = "";
