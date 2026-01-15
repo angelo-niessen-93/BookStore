@@ -191,25 +191,73 @@ let books = [
 
         bookList.innerHTML +=
     `<div class="book">
-         <img src="${book.image}" alt="${book.name}">
-         <p>Name: ${book.name}</p>
-         <p>Author: ${book.author}</p>
-         <p>Likes: ${book.likes}</p>
-         <p>Price: ${book.price}€</p>
-         <p>PublishedYear: ${book.publishedYear}</p>
-         <p>Genre: ${book.genre}</p>
-     
-          <p class="likes">
-          <span class="like-btn" onclick="toggleLike(${i})">
-          ${book.liked ? "❤️" : "🤍"}
-          </span>
-          ${book.likes}
-          </p>
+          <img src="${book.image}" alt="${book.name}">
+          <p>Name: ${book.name}</p>
+          <p>Author: ${book.author}</p>
+          <p>Likes: ${book.likes}</p>
+          <p>Price: ${book.price}€</p>
+          <p>PublishedYear: ${book.publishedYear}</p>
+          <p>Genre: ${book.genre}</p>
+          <p class="likes"><span class="like-btn" onclick="toggleLike(${i})">${book.liked ? "❤️" : "🤍"}</span>${book.likes}</p>
+          <h3>Kommentare</h3>
+          <ul class="comment-list">${renderComments(book.comments)}</ul>
+          <div class="comment-form">
+          <input id="name-${i}" type="text" placeholder="Dein Name">
+          <input id="comment-${i}" type="text" placeholder="Dein Kommentar">
+          <button onclick="addComment(${i})">Absenden</button>
+        </div>
+      
     </div>`;
     
     }
-
+    
 }
+
+function addComment(bookIndex) {
+  const nameInput = document.getElementById(`name-${bookIndex}`);
+  const commentInput = document.getElementById(`comment-${bookIndex}`);
+
+  const name = nameInput.value.trim();
+  const comment = commentInput.value.trim();
+
+  if (name === "" || comment === "") {
+    alert("Bitte Name und Kommentar ausfüllen");
+    return;
+  }
+
+  books[bookIndex].comments.push({
+    name: name,
+    comment: comment
+  });
+
+  
+
+
+  nameInput.value = "";
+  commentInput.value = "";
+
+  renderBooks();
+}
+
+function renderComments(comments) {
+  if (comments.length === 0) {
+    return `<li class="no-comments">Noch keine Kommentare</li>`;
+  }
+
+  let html = "";
+
+  for (let i = 0; i < comments.length; i++) {
+    html += `
+      <li>
+        <strong>${comments[i].name}:</strong>
+        ${comments[i].comment}
+      </li>
+    `;
+  }
+
+  return html;
+}
+
 
 function toggleLike(index) {
   const book = books[index];

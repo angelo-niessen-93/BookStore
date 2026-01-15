@@ -59,3 +59,37 @@ a:hover {
 .like-btn:hover {
     transform: scale(1.2);
 }
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-list li {
+  background: #9bc3c4;
+  margin-bottom: 6px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.no-comments {
+  font-style: italic;
+  color: #777;
+}
+
+.comment-form {
+  margin-top: 10px;
+}
+
+.comment-form input {
+  padding: 6px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: #9bc3c4;
+}
+
+.comment-form button {
+  padding: 6px 10px;
+  cursor: pointer;
+  background: #9bc3c4;
+}
