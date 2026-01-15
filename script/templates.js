@@ -1,5 +1,5 @@
 function renderBookHTML(book, index) {
-    return `
+  return `
     <div class="book">
         <img src="${book.image}" alt="${book.name}">
         <p>Name: ${book.name}</p>
