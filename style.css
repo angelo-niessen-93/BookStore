@@ -124,7 +124,6 @@ footer {
     justify-content: space-around;
     background-color: cadetblue;
     border-radius: 8px;
-    height: 100%;
     flex-direction: column;
 }
 
