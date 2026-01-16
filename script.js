@@ -274,6 +274,7 @@ function renderFavorites() {
         `;
   }
 }
+
 document.addEventListener("DOMContentLoaded", renderFavorites);
 
 function toggleLike(index) {
