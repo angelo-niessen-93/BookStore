@@ -274,6 +274,7 @@ function renderFavorites() {
         `;
   }
 }
+
 document.addEventListener("DOMContentLoaded", renderFavorites);
 
 function toggleLike(index) {
@@ -294,6 +295,6 @@ function toggleLike(index) {
   localStorage.setItem("books", JSON.stringify(books));
   localStorage.setItem("favorites", JSON.stringify(favorites));
 
-  
+
   renderBooks();
 }
