@@ -291,7 +291,6 @@ function toggleLike(index) {
   } else {
     favorites = favorites.filter((fav) => fav.name !== book.name);
   }
-
   localStorage.setItem("books", JSON.stringify(books));
   localStorage.setItem("favorites", JSON.stringify(favorites));
 
