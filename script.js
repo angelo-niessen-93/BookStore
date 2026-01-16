@@ -294,5 +294,6 @@ function toggleLike(index) {
   localStorage.setItem("books", JSON.stringify(books));
   localStorage.setItem("favorites", JSON.stringify(favorites));
 
+  
   renderBooks();
 }
