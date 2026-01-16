@@ -277,7 +277,7 @@ function renderFavorites() {
 
 document.addEventListener("DOMContentLoaded", renderFavorites);
 
-renderFavorites();
+
 
 function toggleLike(index) {
   const book = books[index];
